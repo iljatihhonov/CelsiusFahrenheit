@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CelsiusFahrenheit
 {
@@ -6,8 +6,28 @@ namespace CelsiusFahrenheit
     {
         static void Main(string[] args)
         {
-            ToFahrenheit();
-            ToCelsius();
+            Start:
+            Console.WriteLine("Lets convert temperature!");
+            Console.WriteLine("To convert Celsius to Fahrenheit write '2f'. And if you want to convert Fahrenheit to Celsius, write '2c'. To quit write 'quit'");
+            string UsersChoise = Console.ReadLine();
+
+            if (UsersChoise == "2f")
+                {
+                    ToFahrenheit();
+                }
+            else if (UsersChoise == "2c")
+                {
+                    ToCelsius();
+                }
+            else if (UsersChoise == "quit")
+            {
+                Console.WriteLine("Bye!");
+            }
+            else
+            {
+                Console.WriteLine("What??? Just try again.");
+                    goto Start;
+            }
         }
        
         public static void ToFahrenheit()
